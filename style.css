@@ -1,0 +1,87 @@
+/* One Piece / Pirate Theme */
+:root {
+    --pirate-red: #8b0000;      /* Dark Red like Luffy's vest / Shanks' hair */
+    --pirate-gold: #FFD700;     /* Treasure Gold */
+    --pirate-black: #1a1a1a;    /* Pirate Flag Black */
+    --parchment: #fdf5e6;       /* Old Paper/Map color */
+}
+
+body {
+    background-color: var(--parchment);
+    font-family: 'Times New Roman', serif; /* Classic "Wanted Poster" font feel */
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--pirate-red) !important;
+    border-bottom: 4px solid var(--pirate-gold);
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover {
+    color: var(--pirate-gold) !important;
+}
+
+/* Homepage Hero Section */
+.hero-section {
+    background-color: var(--pirate-red); /* Fallback color */
+    /* Add a background image of the Thousand Sunny or the Ocean here if you want */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--pirate-gold);
+}
+
+/* Cards and Forms */
+.card {
+    border: 2px solid var(--pirate-red);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.card-header {
+    background-color: var(--pirate-red);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.btn-pirate {
+    background-color: var(--pirate-red);
+    color: white;
+    border: 2px solid var(--pirate-black);
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-pirate:hover {
+    background-color: var(--pirate-black);
+    color: var(--pirate-gold);
+    border-color: var(--pirate-gold);
+}
+
+.input-group-text {
+    background-color: var(--pirate-red);
+    color: white;
+    border: 1px solid var(--pirate-black);
+    min-width: 100px; /* Ensure labels align nicely */
+}
+
+h1, h2, h3 {
+    color: var(--pirate-red);
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--pirate-black);
+    color: gray;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}

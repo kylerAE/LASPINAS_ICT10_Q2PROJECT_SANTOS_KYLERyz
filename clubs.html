@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs - Kyler's School of Pirates</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Kyler's School of Pirates</a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculator.html">Grade Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="clubs.html">Clubs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">School Club Information</h2>
+        
+        <div class="card mx-auto shadow-sm" style="max-width: 800px; background-color: #fff;">
+            <div class="card-body p-4">
+                <label for="club-select" class="form-label fw-bold text-danger">Select a club:</label>
+                <select id="club-select" class="form-select mb-3">
+                    <option value="navigation">Straw Hat Navigation Club</option>
+                    <option value="shipwright">Franky's Shipwright Guild</option>
+                    <option value="cooking">Sanji's Culinary Arts</option>
+                    <option value="swords">Zoro's Kendo Club</option>
+                </select>
+
+                <button id="show-club-btn" class="btn btn-pirate" py-click="display_club_info()">Show Club Information</button>
+
+                <div id="club-info-box" class="mt-4 p-4 rounded border border-secondary" style="background-color: var(--parchment); display:none;">
+                    <h3 id="club-name" class="text-danger fw-bold"></h3>
+                    <ul class="list-unstyled mt-3" style="font-size: 1.1rem; line-height: 1.8;">
+                        <li><strong>Description:</strong> <span id="club-desc"></span></li>
+                        <li><strong>Meeting Time:</strong> <span id="club-time"></span></li>
+                        <li><strong>Location:</strong> <span id="club-loc"></span></li>
+                        <li><strong>Advisor:</strong> <span id="club-adv"></span></li>
+                        <li><strong>Number of Members:</strong> <span id="club-mem"></span></li>
+                        <li><strong>Category:</strong> <span id="club-cat"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <py-script>
+        def display_club_info():
+            from js import document
+            
+            # 1. Get Selected Value
+            selected_value = Element("club-select").element.value
+            
+            # 2. Define Dictionary of Clubs (The "Database")
+            clubs_db = {
+                "navigation": {
+                    "name": "Straw Hat Navigation Club",
+                    "desc": "Learn to read Log Poses and map the Grand Line.",
+                    "time": "Every Tuesday 3:00 - 5:00 PM",
+                    "loc": "Cartography Room (Library)",
+                    "advisor": "Ms. Nami",
+                    "members": "8",
+                    "cat": "Academic"
+                },
+                "shipwright": {
+                    "name": "Franky's Shipwright Guild",
+                    "desc": "Design, build, and repair ships using Adam Wood.",
+                    "time": "Fridays 1:00 - 4:00 PM",
+                    "loc": "Dock 1",
+                    "advisor": "Mr. Iceberg",
+                    "members": "15",
+                    "cat": "Vocational"
+                },
+                "cooking": {
+                    "name": "Sanji's Culinary Arts",
+                    "desc": "Master the art of cooking for a hungry crew.",
+                    "time": "Wednesdays 10:00 AM",
+                    "loc": "Baratie Kitchen",
+                    "advisor": "Chef Zeff",
+                    "members": "12",
+                    "cat": "Livelihood"
+                },
+                "swords": {
+                    "name": "Zoro's Kendo Club",
+                    "desc": "Physical training and three-sword style basics.",
+                    "time": "Daily 5:00 AM (Don't get lost)",
+                    "loc": "Training Dojo",
+                    "advisor": "Mr. Dracule Mihawk",
+                    "members": "20",
+                    "cat": "Sports"
+                }
+            }
+
+            # 3. Retrieve Data
+            if selected_value in clubs_db:
+                data = clubs_db[selected_value]
+                
+                # 4. Display Data
+                Element("club-info-box").element.style.display = "block"
+                Element("club-name").element.innerText = data["name"]
+                Element("club-desc").element.innerText = data["desc"]
+                Element("club-time").element.innerText = data["time"]
+                Element("club-loc").element.innerText = data["loc"]
+                Element("club-adv").element.innerText = data["advisor"]
+                Element("club-mem").element.innerText = data["members"]
+                Element("club-cat").element.innerText = data["cat"]
+    </py-script>
+
+    <footer>
+        <p>&copy; 2025 Kyler's School of Pirates</p>
+    </footer>
+</body>
+</html>
