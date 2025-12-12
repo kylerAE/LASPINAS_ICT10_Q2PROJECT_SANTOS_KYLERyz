@@ -1,0 +1,55 @@
+/* Pirate Theme - Dark Red & Gold */
+body {
+    background-color: #fdf5e6; /* Parchment Paper */
+    font-family: 'Times New Roman', serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #8b0000; /* Dark Red */
+    border-bottom: 4px solid #FFD700; /* Gold */
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.nav-link:hover {
+    color: #FFD700 !important;
+}
+
+/* Cards */
+.card {
+    border: 3px solid #8b0000;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    background-color: #fff;
+}
+.card-header {
+    background-color: #8b0000;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #FFD700;
+}
+
+/* Buttons */
+.btn-pirate {
+    background-color: #8b0000;
+    color: white;
+    border: 2px solid #000;
+    width: 100%;
+    font-weight: bold;
+}
+.btn-pirate:hover {
+    background-color: #000;
+    color: #FFD700;
+    border-color: #FFD700;
+}
+
+/* Inputs */
+.input-group-text {
+    background-color: #8b0000;
+    color: white;
+    border: 1px solid #000;
+    min-width: 100px;
+}
